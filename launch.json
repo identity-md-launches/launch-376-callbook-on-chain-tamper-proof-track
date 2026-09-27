@@ -1,0 +1,26 @@
+{
+  "kind": "evm_project",
+  "token": {
+    "contract": "LaunchToken",
+    "name": "CallBook",
+    "symbol": "CALL",
+    "decimals": 18
+  },
+  "contracts": [
+    {
+      "contract": "CallBook",
+      "constructorArgs": [
+        "$owner",
+        "0x694AA1769357215DE4FAC081bf1f309aDC325306",
+        "0x1b44F3514812d835EB1BDB0acB33d3fA3351Ee43"
+      ]
+    }
+  ],
+  "pool": {
+    "pairedCurrency": "0x0000000000000000000000000000000000000000",
+    "fee": 3000,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "notes": "Sepolia launch. LaunchToken has no constructor arguments and is separate from CallBook's trading-call records. CallBook's nonpayable constructor takes the policy owner, Chainlink ETH/USD feed, and Chainlink BTC/USD feed, in that order; it enables both feeds without initialization calls. The immutable owner can only manage feeds. CallBook charges no fees and has no token dependency or payable entry points. The pool pairs CALL with native ETH, has no hook, and expresses initialPrice as decimal sqrtPriceX96. The factory supplies the LP and MerkleDistributor."
+}
